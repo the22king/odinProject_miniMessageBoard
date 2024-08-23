@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Message Board</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+        <% messages.forEach((message, i) => { %>
+        <div class="message">
+            <ul>
+                <li><strong>Message: </strong><%= message.text %></li>
+                <li><strong>User: </strong><%= message.user %></li>
+                <li><strong>Date added: </strong><%= message.added %></li>
+            </ul>
+            <a class="new-message" href="/message/<%= i %>" target="_blank" >Open this message in a new tab</a>
+        </div>
+       <% }); %>
+    <a class="add-message" href="/new">Add a new message</a>
+</body>
+</html>
